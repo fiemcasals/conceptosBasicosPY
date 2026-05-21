@@ -38,3 +38,33 @@ Cualquier desarrollo en este repositorio debe respetar las siguientes normas esp
 * **Límite de Longitud**: Ningún script o archivo de código debe superar las **200 líneas**.
 * **Comentarios Obligatorios**: Cada línea de código que se programe debe incluir un comentario explicativo al final o en la línea inmediatamente superior.
 * **Descripción Inicial**: Todo archivo de código debe comenzar con una sección de comentarios explicando claramente su propósito y cómo funciona.
+
+---
+
+## Guía de Git y Despliegue (Push)
+
+Para subir tus cambios a este repositorio en GitHub de forma efectiva y sin problemas de autenticación, sigue estos pasos:
+
+### 1. Configurar el origen usando SSH
+GitHub no soporta autenticación mediante contraseña simple por HTTPS. Debes asegurarte de que el origen remoto esté configurado a través de **SSH**:
+
+```bash
+# Cambia la URL del remoto a la dirección SSH del repositorio
+git remote set-url origin git@github.com:fiemcasals/conceptosBasicosPY.git
+```
+
+### 2. Asegurar el nombre de la rama principal (`main`)
+GitHub utiliza `main` como su rama por defecto en lugar de `master`. Para renombrar tu rama local actual a `main`:
+
+```bash
+# Renombra la rama local activa a 'main'
+git branch -M main
+```
+
+### 3. Realizar el Push a GitHub
+Una vez configurado el remoto por SSH y renombrada la rama, sube los cambios estableciendo la rama de rastreo por defecto:
+
+```bash
+# Sube los cambios de la rama local 'main' a la rama remota en 'origin'
+git push -u origin main
+```
